@@ -1,13 +1,14 @@
 {% extends "myapp/base.html" %}
 
 
-
 {% block content %} 
       <h4>
-      {% for item in items%}
-      <a href="{% url 'myapp:detail' item.id %}">
-      ID: {{item.id}} | Название процессора: {{item.name}} | Цена: {{item.price}} | Характеристики: {{item.discription}} <br/>
-      <a>
-      {% endfor %}
+        {% for item in items%}
+        <a href="{% url 'myapp:detail' item.id %}">
+
+        ID: {{item.id}} | Название процессора: {{item.name}} | Цена: {{item.price}} | Характеристики: {{item.discription}} <br/>
+          <img src= "{{item.image.url}}" alt="">
+        <a>
+        {% endfor %}
       </h4>
-      {% endblock content %}
+{% endblock content %}
